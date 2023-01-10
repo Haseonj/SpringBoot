@@ -2,30 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<title>user1::modify</title>
+		<title>user2::register</title>
 	</head>	
 <body>
-	<h3>user1 수정</h3>
+	<h3>user2 수정</h3>
 	<a href="/User">User 메인</a>
-	<a href="/User/user1/list">user1 목록</a>
+	<a href="/User/user2/list">user2 목록</a>
 	
-	<form action="/User/user1/modify" method="post">
+	<form action="/User/user2/register" method="post">
 		<table border="1">
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="uid" th:value="${user.uid}" readonly></td>
+				<td><input type="text" name="uid"></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="name" th:value="${user.name}"></td>
+				<td><input type="text" name="name"></td>
 			</tr>
 			<tr>
 				<td>휴대폰</td>
-				<td><input type="text" name="hp" th:value="${user.hp}"></td>
+				<td><input type="text" name="hp"></td>
 			</tr>
 			<tr>
 				<td>나이</td>
-				<td><input type="text" name="age" th:value="${user.age}"></td>
+				<td><input type="text" name="age"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="right"><input type="submit" value="등록"></td>
