@@ -9,7 +9,7 @@
 		<a th:href="@{/}">User 메인</a>
 		<a th:href="@{/user4/list}">user4 목록</a>
 		
-		<form action="/User/user4/register" method="post">
+		<form th:action="@{/user4/register}" method="post">
 			<table border="1">
 				<tr>
 					<td>이름</td>
