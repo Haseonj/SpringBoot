@@ -12,16 +12,6 @@ import kr.co.ch07.vo.User1VO;
 @Controller
 public class MainController {
 	
-	/*
-	@GetMapping("/query")
-	public String query() {
-		List<User1VO> users = repo.findUser1VOBy();
-		System.out.println("query 결과 :" + users);
-		return "redirect:/";
-	}
-	*/
-	
-	
 
 	@Autowired
 	private User1Repo repo;
