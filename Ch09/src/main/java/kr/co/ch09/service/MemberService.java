@@ -27,7 +27,7 @@ public class MemberService {
 	}
 	
 	public void updateMember(MemberVO vo) {
-		repo.save(vo);;
+		repo.save(vo);
 	}
 	
 	public void deleteMember(String uid) {
