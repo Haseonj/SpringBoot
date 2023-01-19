@@ -7,17 +7,23 @@
     <script>
     		function isChecked(){
     			
-    			var checkBox1 = document.getElementsClassName('terms'); 
-    			var checkBox2 = document.getElementsClassName('privacy');
+    			let checkBox1 = document.querySelectorAll('input[type="checkbox"]:checked');
     			
-    			var checked1 = checkBox1.getAttribute("checked");
-    			var checked2 = checkBox2.getAttribute("checked");
+    			console.log(checkBox1);
     			
-    			if(!checked1){
-    				alert('check please');
+    			if(checkBox1){
+    				alert("All check ok!");
     			}else{
-    				alert('go register');
+    				alert("none")
     			}
+    			
+    			/*
+    			var checkBox1 = document.getElementsClassName('terms').checked; 
+    			let checked1 = checkBox1.isChecked;
+    			var checkBox2 = document.getElementsClassName('privacy');
+    			let checked2 = checkBox2.getAttribute("checked");
+    			*/
+    			
     			
     		}
     </script>
