@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>글목록</title>    
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
     <div id="wrapper">
@@ -29,7 +29,7 @@
                 </tr>
                 <tr  th:each="article, i:${articles}">
                     <td>[[${pageStartNum - i.index}]]</td>
-                    <td><a th:href="@{/view}">[[${article.title}]]&#91;[[${article.comment}]]&#93;</a></td>
+                    <td><a th:href="@{/view(no=${article.no})}">[[${article.title}]]&#91;[[${article.comment}]]&#93;</a></td>
                     <td>[[${article.nick}]]</td>
                     <td>[[${article.rdate}]]</td>
                     <td>[[${article.hit}]]</td>

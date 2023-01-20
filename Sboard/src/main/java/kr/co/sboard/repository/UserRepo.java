@@ -7,4 +7,6 @@ import kr.co.sboard.entity.UserEntity;
 public interface UserRepo extends JpaRepository<UserEntity, String>{
 
 	public int countByUid(String uid);
+	public int countByNick(String nick);
+	
 }

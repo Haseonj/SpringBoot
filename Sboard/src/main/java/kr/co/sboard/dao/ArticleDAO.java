@@ -16,6 +16,10 @@ public interface ArticleDAO {
 	
 	public int insertFile(FileVO vo);
 	
+	public FileVO selectFile(int fno);
+	
+	public int updateDownload(int fno);
+	
 	public int selectCountTotal();
 	
 	public ArticleVO selectArticle(int no);
