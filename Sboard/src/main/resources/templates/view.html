@@ -38,8 +38,8 @@
             </table>
 
             <div>
-                <a th:href="@{#}" class="btn btnRemove">삭제</a>
-                <a th:href="@{/modify}" class="btn btnModify">수정</a>
+                <a th:if="${#authentication.principal.user.uid == article.uid}" th:href="@{#}" class="btn btnRemove">삭제</a>
+                <a th:if="${#authentication.principal.user.uid == article.uid}" th:href="@{/modify(no=${article.no})}" class="btn btnModify">수정</a>
                 <a th:href="@{/list}" class="btn btnList">목록</a>
             </div>
 

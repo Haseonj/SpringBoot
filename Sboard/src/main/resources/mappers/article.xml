@@ -80,6 +80,16 @@
  		</association>
  	</resultMap>
  	
+ 	<update id="updateArticleHit">
+		 update `board_article` set `hit` = `hit` + 1 where `no` = #{no};
+ 	</update>
+ 	
+ 	<update id="updateArticle">
+ 		update `board_article` set 
+ 			`title`=#{title},
+ 			`content`=#{content}
+ 			where `no`=#{no}
+ 	</update>
  	
 	
 	

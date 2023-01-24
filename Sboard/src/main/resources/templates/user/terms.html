@@ -6,21 +6,19 @@
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-    	$(function(){
-    		$('#next').click(function(e){
-    			e.preventDefault;
-    			let checkBox1 = $('input[class=terms]').is(':checked');
-    			let checkBox2 = $('input[class=privacy]').is(':checked');
+    	window.onload = function(){
+    		document.getElementById("next").onclick = ()=>{
+    			let terms = document.querySelector('input[name=terms]');
+    			let privacy = document.querySelector('input[name=privacy]');
     			
-    			if(checkBox1 && checkBox2){
+    			if(terms.checked && privacy.checked){
     				return true;
     			}else{
-    				alert('필수 동의란에 체크 해주십시오.');
+    				alert("필수항목을 모두 체크해 주십시오.");
     				return false;
     			}
-    		});
-    		
-    	});
+    		}
+    	}
     </script>
 </head>
 <body>
@@ -28,13 +26,13 @@
         <header>
             <h3>Board System v1.0</h3>
         </header>
-        <main id="user" class="terms">
+        <main id="user">
             <table border="0">
                 <caption>사이트 이용약관</caption>
                 <tr>
                     <td>
                         <textarea class="terms" readonly>[[${termsVO.terms}]]</textarea>
-                        <label><input type="checkbox" class="terms">&nbsp;동의합니다.</label>
+                        <label><input type="checkbox" name="terms">&nbsp;동의합니다.</label>
                     </td>
                 </tr>
             </table>
@@ -44,7 +42,7 @@
                 <tr>
                     <td>
                         <textarea class="privacy" readonly>[[${termsVO.privacy}]]</textarea>
-                        <label><input type="checkbox" class="privacy">&nbsp;동의합니다.</label>
+                        <label><input type="checkbox" name="privacy">&nbsp;동의합니다.</label>
                     </td>
                 </tr>
             </table>

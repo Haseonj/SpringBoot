@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
@@ -22,7 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.sboard.dao.ArticleDAO;
+import kr.co.sboard.entity.UserEntity;
 import kr.co.sboard.repository.ArticleRepo;
+import kr.co.sboard.security.MyUserDetails;
 import kr.co.sboard.vo.ArticleVO;
 import kr.co.sboard.vo.FileVO;
 import lombok.extern.slf4j.Slf4j;
@@ -53,8 +56,16 @@ public class ArticleService {
 		return result;
 	}
 	
-	public ArticleVO selectArticle(int no) {
-		return dao.selectArticle(no);
+	@Transactional
+	public ArticleVO selectArticle(int no, UserEntity user) {
+		ArticleVO article = dao.selectArticle(no);
+		
+		// 글 작성자가 아닌 사용자만 조회수 증가
+		if(!article.getUid().equals(user.getUid())) {
+			dao.updateArticleHit(no);
+		}
+		
+		return article;
 	}
 	
 	@Transactional

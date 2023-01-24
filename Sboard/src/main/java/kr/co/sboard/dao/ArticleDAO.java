@@ -28,5 +28,7 @@ public interface ArticleDAO {
 	
 	public int updateArticle(ArticleVO vo);
 	
+	public int updateArticleHit(int no);
+	
 	public int deleteArticle(int no);
 }
