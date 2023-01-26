@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.farmstory.dao.ArticleDAO">
+
+	<!-- 입력 후 공급했던 vo에 no (PK값) 주입 -->
+	<insert id="insertArticle" useGeneratedKeys="true" keyProperty="no">
+		insert into `board_article` set
+			`cate`=#{cate},
+			`title`=#{title},
+			`content`=#{content},
+			<if test="fname.isEmpty() == true">
+				`file`=0,
+			</if>
+			<if test="fname.isEmpty() == false">
+				`file`=1,
+			</if>
+			`uid`=#{uid},
+			`regip`=#{regip},
+			`rdate`=NOW();
+	</insert>
+	
+	<insert id="insertFile">
+		insert into `board_file` set
+			`parent`=#{parent},
+			`newName`=#{newName},
+			`oriName`=#{oriName};
+	</insert>
+	
+	<insert id="insertComment">
+		insert into `board_article` set
+			`parent`=#{parent},
+			`uid`=#{uid},
+			`content`=#{content};
+	</insert>
+	
+	<select id="selectFile" resultType="kr.co.farmstory.vo.FileVO">
+ 		select * from `board_file` where `fno`=#{fno};
+ 	</select>
+ 	
+ 	<update id="updateDownload">
+ 		update `board_file` set `download` = `download` + 1 where `fno`=#{fno};
+ 	</update>
+	
+	<select id="selectArticles" resultType="kr.co.farmstory.vo.ArticleVO">
+		select a.*, b.`nick` from `board_article` as a
+		join `board_user` as b
+		on a.uid = b.uid
+		where `parent`=0 and `cate`=#{cate}
+		order by `no` desc
+		limit #{start}, 10;
+	</select>
+	
+	<select id="selectCountTotal" resultType="int">
+		select count(`no`) from `board_article` where `parent`=0 and `cate`=#{cate};
+ 	</select>
+ 	
+ 	<select id="selectArticle" resultMap="selectArticleResultMap">
+ 		select * from `board_article` as a 
+ 		left join `board_file` as b 
+ 		on a.no = b.parent
+ 		where `no`=#{no};
+ 	</select>
+ 	
+ 	<!-- resultMap : 조회(Select) 결과를 상세하게 매핑하기 위한 사용자 정의 -->
+ 	<resultMap id="selectArticleResultMap" type="kr.co.farmstory.vo.ArticleVO">
+ 		<!-- PK값 -->
+ 		<id column="no" property="no"/>
+ 		<result column="parent" property="parent"/>
+ 		<result column="comment" property="comment"/>
+ 		<result column="cate" property="cate"/>
+ 		<result column="title" property="title"/>
+ 		<result column="content" property="content"/>
+ 		<result column="file" property="file"/>
+ 		<result column="hit" property="hit"/>
+ 		<result column="uid" property="uid"/>
+ 		<result column="regip" property="regip"/>
+ 		<result column="rdate" property="rdate"/>
+ 		
+ 		<!-- 연관관계 매핑 (다중파일 적용시, association > collection 으로 사용)-->
+ 		<association property="fileVO" javaType="kr.co.farmstory.vo.FileVO">
+ 			<id column="fno" property="fno"/>
+ 			<result column="parent" property="parent"/>
+ 			<result column="newName" property="newName"/>
+ 			<result column="oriName" property="oriName"/>
+ 			<result column="download" property="download"/>
+ 		</association>
+ 	</resultMap>
+ 	
+ 	<update id="updateArticleHit">
+		 update `board_article` set `hit` = `hit` + 1 where `no` = #{no};
+ 	</update>
+ 	
+ 	<update id="updateArticle">
+ 		update `board_article` set 
+ 			`title`=#{title},
+ 			`content`=#{content}
+ 			where `no`=#{no}
+ 	</update>
+ 	
+	<delete id="deleteArticle">
+		DELETE a, b FROM `board_article` AS a
+		JOIN `board_file` AS b ON a.no = b.parent
+		WHERE a.no = #{no}
+	</delete>
+	
+</mapper>

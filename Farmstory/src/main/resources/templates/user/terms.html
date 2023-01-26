@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/_header}"/>
+    <script>
+    	window.onload = function(){
+    		document.getElementById("next").onclick = ()=>{
+    			let terms = document.querySelector('input[name=terms]');
+    			let privacy = document.querySelector('input[name=privacy]');
+
+    			if(terms.checked && privacy.checked){
+    				return true;
+    			}else{
+    				alert("필수항목을 모두 체크해 주십시오.");
+    				return false;
+    			}
+    		}
+    	}
+    </script>
+    <main id="user">
+        <table border="0">
+            <caption>사이트 이용약관</caption>
+            <tr>
+                <td>
+                    <textarea class="terms" readonly>[[${termsVO.terms}]]</textarea>
+                    <label><input type="checkbox" name="terms">&nbsp;동의합니다.</label>
+                </td>
+            </tr>
+        </table>
+
+        <table border="0">
+            <caption>개인정보 취급방침</caption>
+            <tr>
+                <td>
+                    <textarea class="privacy" readonly>[[${termsVO.privacy}]]</textarea>
+                    <label><input type="checkbox" name="privacy">&nbsp;동의합니다.</label>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <a th:href="@{/user/login}" class="cancel">취소</a>
+            <a th:href="@{/user/register}" class="next" id="next">다음</a>
+        </p>
+    </main>
+<th:block th:replace="~{/_footer}"/>
+</html>
