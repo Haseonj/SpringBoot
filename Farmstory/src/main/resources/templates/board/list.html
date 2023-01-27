@@ -13,7 +13,7 @@
                         <th>조회</th>
                     </tr>
 
-                    <tr  th:each="article, i:${articles}">
+                    <tr th:each="article, i:${articles}">
                         <td>[[${pageStartNum - i.index}]]</td>
                         <td><a th:href="@{/board/view(no=${article.no}, group=${group})}">[[${article.title}]]&#91;[[${article.comment}]]&#93;</a></td>
                         <td>[[${article.nick}]]</td>

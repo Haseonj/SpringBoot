@@ -65,4 +65,8 @@ public class UserService {
         int result = repo.countByNick(nick);
         return result;
     }
+
+    public interface EmailService{
+        String sendSimpleMessage(String to)throws Exception;
+    }
 }

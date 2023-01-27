@@ -32,8 +32,14 @@
 		insert into `board_article` set
 			`parent`=#{parent},
 			`uid`=#{uid},
-			`content`=#{content};
+			`content`=#{content},
+			`regip`=#{regip},
+			`rdate`=NOW();
 	</insert>
+
+	<update id="updateArticleComment">
+		update `board_article` set `comment` = `comment` + 1 where `no`=#{no};
+	</update>
 	
 	<select id="selectFile" resultType="kr.co.farmstory.vo.FileVO">
  		select * from `board_file` where `fno`=#{fno};
@@ -87,6 +93,10 @@
  			<result column="download" property="download"/>
  		</association>
  	</resultMap>
+
+	<select id="selectComments" resultType="kr.co.farmstory.vo.ArticleVO">
+		select * from `board_article` where `parent`=#{no};
+	</select>
  	
  	<update id="updateArticleHit">
 		 update `board_article` set `hit` = `hit` + 1 where `no` = #{no};
@@ -96,13 +106,15 @@
  		update `board_article` set 
  			`title`=#{title},
  			`content`=#{content}
- 			where `no`=#{no}
+ 			where `no`=#{no};
  	</update>
  	
 	<delete id="deleteArticle">
-		DELETE a, b FROM `board_article` AS a
-		JOIN `board_file` AS b ON a.no = b.parent
-		WHERE a.no = #{no}
+		DELETE FROM `board_article` WHERE `no`=#{no};
+	</delete>
+
+	<delete id="deleteFile">
+		DELETE FROM `board_file` WHERE `parent`=#{no}
 	</delete>
 	
 </mapper>

@@ -70,11 +70,20 @@ public class ArticleController {
     public String view(@AuthenticationPrincipal MyUserDetails myUser, int no, String group, Model model){
         UserEntity user = myUser.getUser();
         ArticleVO article = service.selectArticle(no, user);
+        List<ArticleVO> comments = service.selectComments(no);
         model.addAttribute("article", article);
+        model.addAttribute("comment", comments);
         model.addAttribute("group", group);
         model.addAttribute("cate", article.getCate());
         model.addAttribute("user", user);
         return "board/view";
+    }
+
+    @GetMapping("board/writeComment")
+    public int writeComment(ArticleVO vo){
+        log.info("controller parent : "+ vo.getParent());
+        int result = service.insertComment(vo);
+        return result;
     }
 
     @GetMapping("board/download")
@@ -85,12 +94,25 @@ public class ArticleController {
     }
 
     @GetMapping("board/modify")
-    public String modify(){
+    public String modify(@AuthenticationPrincipal MyUserDetails myUser, int no, String group, Model model){
+        UserEntity user = myUser.getUser();
+        ArticleVO article = service.selectArticle(no, user);
+        model.addAttribute("article", article);
+        model.addAttribute("group", group);
+        model.addAttribute("cate", article.getCate());
         return "board/modify";
     }
+
+    @PostMapping("board/modify")
+    public String modify(ArticleVO vo, String group){
+        service.updateArticle(vo);
+        return "redirect:/board/view?no="+vo.getNo()+"&group="+group+"&cate="+vo.getCate();
+    }
+
     @GetMapping("board/delete")
-    public String delete(){
-        return "board/delete";
+    public String delete(int no, String group, String cate, int file){
+        service.deleteArticle(no, file);
+        return "redirect:/board/list?group="+group+"&cate="+cate;
     }
 
 }

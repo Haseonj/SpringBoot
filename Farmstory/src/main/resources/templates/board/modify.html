@@ -1,10 +1,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/_header}"/>
 <th:block th:replace="~{board/__${group}__}"/>
+<script>
+    window.onload = function(){
+        document.querySelector('form').onsubmit = ()=>{
+            let title = '[[${article.title}]]';
+            let content = '[[${article.content}]]';
+            let changedTitle = document.querySelector('input[name=title]').value;
+            let changedContent = document.querySelector('textarea[name=content]').value;
+
+            if(title != changedTitle || content != changedContent){
+                if(confirm('정말 수정 하시겠습니까?')){
+                    return true;
+                }
+                return false;
+            }else{
+                alert('게시글을 수정 해주십시오.');
+                return false;
+            }
+        };
+    };
+</script>
         <main id="board" class="modify">
             
-            <form th:action="@{/modify}" method="post">
+            <form th:action="@{/board/modify}" method="post">
             	<input type="hidden" name="no" th:value="${article.no}">
+                <input type="hidden" name="group" th:value="${group}">
+                <input type="hidden" name="cate" th:value="${cate}">
                 <table border="0">
                     <caption>글수정</caption>
                     <tr>

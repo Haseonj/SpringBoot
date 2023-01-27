@@ -51,8 +51,17 @@ public class ArticleService {
         return result;
     }
 
+    @Transactional
     public int insertComment(ArticleVO vo) {
-        return dao.insertComment(vo);
+        log.info("vo.getParent :" + vo.getParent());
+        dao.insertComment(vo);
+        dao.updateArticleComment(vo.getParent());
+        return 0;
+    }
+
+    public List<ArticleVO> selectComments(int no){
+        List<ArticleVO> comments = dao.selectComments(no);
+        return comments;
     }
 
     @Transactional
@@ -76,7 +85,6 @@ public class ArticleService {
     }
 
     public List<ArticleVO> selectArticles(int start, String cate) {
-        log.info("cate(selectArticles) : " +cate);
         return dao.selectArticles(start, cate);
     }
 
@@ -84,8 +92,13 @@ public class ArticleService {
         return dao.updateArticle(vo);
     }
 
-    public int deleteArticle(int no) {
-        return dao.deleteArticle(no);
+    @Transactional
+    public int deleteArticle(int no, int file) {
+        int result = dao.deleteArticle(no);
+        if(file == 1) {
+            dao.deleteFile(no);
+        }
+        return result;
     }
 
     @Value("${spring.servlet.multipart.location}")
@@ -159,7 +172,6 @@ public class ArticleService {
 
     // 전체 게시물 갯수
     public int getTotalCount(String cate) {
-        log.info("cate(getTotalCount) : " +cate);
         return dao.selectCountTotal(cate);
     }
 

@@ -18,6 +18,8 @@ public interface ArticleDAO {
 
     public int insertComment(ArticleVO vo);
 
+    public int updateArticleComment(int no);
+
     public FileVO selectFile(int fno);
 
     public int updateDownload(int fno);
@@ -26,6 +28,8 @@ public interface ArticleDAO {
 
     public ArticleVO selectArticle(int no);
 
+    public List<ArticleVO> selectComments(int no);
+
     public List<ArticleVO> selectArticles(@Param("start") int start,@Param("cate") String cate);
 
     public int updateArticle(ArticleVO vo);
@@ -33,4 +37,6 @@ public interface ArticleDAO {
     public int updateArticleHit(int no);
 
     public int deleteArticle(int no);
+
+    public int deleteFile(int no);
 }

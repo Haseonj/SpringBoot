@@ -1,9 +1,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/_header}"/>
 <th:block th:replace="~{board/__${group}__}"/>
-
         <main id="board" class="view">
-            
+            <script>
+    	window.onload = ()=>{
+    		// 게시글 삭제
+    		document.querySelector('.btnRemove').onclick = ()=>{
+    			if(confirm('정말 삭제 하시겠습니까?')){
+    				return true;
+    			}else{
+	    			return false;
+    			}
+    		};
+
+    		// 댓글 쓰기
+    		document.querySelector('.btnComplete').submit = ()=>{
+
+    			let parent = document.querySelector('input[name=parent]').value;
+    			let uid = document.querySelector('input[name=uid]').value;
+    			let content = document.querySelector('form > textarea[name=content]').value;
+    			let regip = document.querySelector('input[name=regip]').value;
+
+    			const xhr = new XMLHttpRequest();
+				xhr.open("GET", "/Farmstory/board/writeComment?parent="+parent+"&uid="+uid+"&content="+content+"&regip="+regip);
+				xhr.responseType = "json";
+				xhr.send();
+
+				xhr.onreadystatechange = ()=>{
+					if(xhr.readyState == XMLHttpRequest.DONE){
+
+						if(xhr.status == 200){
+							const data = xhr.response;
+							console.log(log);
+
+							if(data.result == 1){
+
+							}
+						}
+					}
+				};
+
+    			return false;
+    		};
+    	};
+    </script>
+
             <table>
                 <caption>글보기</caption>
                 <tr>
@@ -24,34 +65,33 @@
             </table>
 
             <div>
-                <a th:if="${user.uid == article.uid}" th:href="@{/board/delete(no=${article.no})}" class="btn btnRemove">삭제</a>
-                <a th:if="${user.uid == article.uid}" th:href="@{/board/modify(no=${article.no})}" class="btn btnModify">수정</a>
+                <a th:if="${user.uid == article.uid}" th:href="@{/board/delete(no=${article.no}, group=${group}, cate=${cate}, file=${article.file})}" class="btn btnRemove">삭제</a>
+                <a th:if="${user.uid == article.uid}" th:href="@{/board/modify(no=${article.no}, group=${group})}" class="btn btnModify">수정</a>
                 <a th:href="@{/board/list(group=${group}, cate=${cate})}" class="btn btnList">목록</a>
             </div>
 
             <!-- 댓글목록 -->
             <section class="commentList">
                 <h3>댓글목록</h3>
-                <article>
-                    <span class="nick">길동이</span>
-                    <span class="date">20-05-13</span>                    
-                    <p class="content">댓글 샘플입니다.</p>
+                <article th:each="comment:${comment}">
+                    <span class="nick">[[${comment.uid}]]</span>
+                    <span class="date">[[${comment.rdate}]]</span>
+                    <p class="content">[[${comment.content}]]</p>
                     <div>
                         <a href="#" class="remove">삭제</a>
                         <a href="#" class="modify">수정</a>
                     </div>
                 </article>                
-                <p class="empty">등록된 댓글이 없습니다.</p>
+                <p th:if="${article.comment}==0" class="empty">등록된 댓글이 없습니다.</p>
             </section>
 
             <!-- 댓글쓰기 -->
             <section class="commentForm">
                 <h3>댓글쓰기</h3>
-                <form action="#">
-                    <!--/*
-                	<input type="hidden" name="uid" th:value="${#authentication.principal.user.uid}" />
+                <form th:action="@{/board/writeComment}" method="get">
+                	<input type="hidden" name="regip" th:value="${#authentication.details.remoteAddress}"/>
+                	<input type="hidden" name="uid" th:value="${user.uid}"/>
                 	<input type="hidden" name="parent" th:value="${article.no}"/>
-                	*/-->
                     <textarea name="content" placeholder="댓글내용 입력"></textarea>
                     <div>
                         <a href="#" class="btn btnCancel">취소</a>
