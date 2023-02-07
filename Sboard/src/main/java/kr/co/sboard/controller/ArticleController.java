@@ -94,4 +94,23 @@ public class ArticleController {
 		return respEntity;
 	}
 	
+	@GetMapping("delete")
+	public String delete(int no) {
+		log.info("no : " + no);
+		service.deleteArticle(no);
+		return "redirect:/list";
+	}
+	
+	@GetMapping("writeComment")
+	public String writeComment(@RequestParam("parent") int parent ,@RequestParam("uid") String uid, @RequestParam("content") String content) {
+		ArticleVO vo = new ArticleVO();
+		vo.setParent(parent);
+		vo.setUid(uid);
+		vo.setContent(content);
+		
+		service.insertComment(vo);
+		
+		return "";
+	}
+	
 }

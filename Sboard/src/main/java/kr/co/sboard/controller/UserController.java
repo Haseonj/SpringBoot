@@ -56,7 +56,6 @@ public class UserController {
 	@ResponseBody
 	@GetMapping("user/checkUid")
 	public Map<String, Integer> checkUid(@RequestParam("uid") String uid) {
-		log.info("uid" + uid);
 		int result = service.countByUid(uid);
 		
 		Map<String, Integer> resultMap = new HashMap<>();
@@ -68,7 +67,6 @@ public class UserController {
 	@ResponseBody
 	@GetMapping("user/checkNick")
 	public Map<String, Integer> checkNick(@RequestParam("nick") String nick) {
-		log.info("nick :" + nick);
 		int result = service.countByNick(nick);
 		
 		Map<String, Integer> resultMap = new HashMap<>();

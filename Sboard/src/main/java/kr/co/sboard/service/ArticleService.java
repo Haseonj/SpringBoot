@@ -56,6 +56,10 @@ public class ArticleService {
 		return result;
 	}
 	
+	public int insertComment(ArticleVO vo) {
+		return dao.insertComment(vo);
+	}
+	
 	@Transactional
 	public ArticleVO selectArticle(int no, UserEntity user) {
 		ArticleVO article = dao.selectArticle(no);

@@ -16,6 +16,8 @@ public interface ArticleDAO {
 	
 	public int insertFile(FileVO vo);
 	
+	public int insertComment(ArticleVO vo);
+	
 	public FileVO selectFile(int fno);
 	
 	public int updateDownload(int fno);

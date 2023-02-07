@@ -1,387 +1,77 @@
-2023-01-25 01:02:29.567  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : Starting SboardApplication using Java 17.0.5 on DESKTOP-VM4SFC7 with PID 3012 (C:\Users\hasj7\OneDrive\바탕 화면\Workspace\SpringBoot\Sboard\target\classes started by hasj7 in C:\Users\hasj7\OneDrive\바탕 화면\Workspace\SpringBoot\Sboard)
-2023-01-25 01:02:29.572  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : No active profile set, falling back to 1 default profile: "default"
-2023-01-25 01:02:29.650  INFO 3012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-01-25 01:02:29.651  INFO 3012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-01-25 01:02:30.578  INFO 3012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-25 01:02:30.660  INFO 3012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
-2023-01-25 01:02:31.368  INFO 3012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-01-25 01:02:31.384  INFO 3012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-25 01:02:31.385  INFO 3012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
-2023-01-25 01:02:31.498  INFO 3012 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring embedded WebApplicationContext
-2023-01-25 01:02:31.499  INFO 3012 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1847 ms
-2023-01-25 01:02:31.844  INFO 3012 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-25 01:02:31.924  INFO 3012 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-01-25 01:02:32.156  INFO 3012 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-25 01:02:32.275  INFO 3012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-25 01:02:32.572  INFO 3012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-25 01:02:32.591  INFO 3012 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2023-01-25 01:02:33.394  INFO 3012 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-25 01:02:33.404  INFO 3012 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 01:02:38.444  INFO 3012 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64cca707, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a37333, org.springframework.security.web.context.SecurityContextPersistenceFilter@f91125e, org.springframework.security.web.header.HeaderWriterFilter@606a8ab2, org.springframework.security.web.authentication.logout.LogoutFilter@5d6ac0f1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52a61578, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@362173ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f7e37db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7257217, org.springframework.security.web.session.SessionManagementFilter@1dd7f275, org.springframework.security.web.access.ExceptionTranslationFilter@6f4e569, org.springframework.security.web.access.intercept.AuthorizationFilter@5a933627]
-2023-01-25 01:02:38.481  WARN 3012 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-25 01:02:38.851  INFO 3012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-01-25 01:02:38.893  INFO 3012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Sboard'
-2023-01-25 01:02:38.905  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 9.797 seconds (JVM running for 10.685)
-2023-01-25 01:02:46.644  INFO 3012 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-25 01:02:46.644  INFO 3012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-25 01:02:46.645  INFO 3012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-25 01:50:03.481  INFO 3012 --- [http-nio-8080-exec-9] kr.co.sboard.controller.UserController   : uidhasj7598
-2023-01-25 01:59:20.238  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 01:59:20.239  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : title : 글수정 테스트
-2023-01-25 01:59:20.239  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 01:59:20.239  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : no : 0
-2023-01-25 01:59:20.258 ERROR 3012 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/Sboard] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "kr.co.sboard.vo.ArticleVO.getUid()" because "article" is null] with root cause
+2023-01-26 15:40:48.079  INFO 724 --- [restartedMain] kr.co.sboard.SboardApplication           : Starting SboardApplication using Java 17.0.5 on DESKTOP-QOTDKI5 with PID 724 (C:\Users\java2\Desktop\Workspace\SpringBoot\Sboard\target\classes started by java2 in C:\Users\java2\Desktop\Workspace\SpringBoot\Sboard)
+2023-01-26 15:40:48.130  INFO 724 --- [restartedMain] kr.co.sboard.SboardApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-26 15:40:48.366  INFO 724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-26 15:40:48.367  INFO 724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-26 15:40:49.370  INFO 724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-26 15:40:49.429  INFO 724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2023-01-26 15:40:49.998  INFO 724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-26 15:40:50.010  INFO 724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-26 15:40:50.011  INFO 724 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-26 15:40:50.087  INFO 724 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring embedded WebApplicationContext
+2023-01-26 15:40:50.088  INFO 724 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1719 ms
+2023-01-26 15:40:50.270  INFO 724 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-26 15:40:50.313  INFO 724 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-26 15:40:50.458  INFO 724 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-26 15:40:50.552  INFO 724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-26 15:40:50.815  INFO 724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-26 15:40:50.829  INFO 724 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-26 15:40:51.369  INFO 724 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-26 15:40:51.376  INFO 724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-26 15:40:51.970  INFO 724 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1daf85e2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52252, org.springframework.security.web.context.SecurityContextPersistenceFilter@38f74c0b, org.springframework.security.web.header.HeaderWriterFilter@50fe5be7, org.springframework.security.web.authentication.logout.LogoutFilter@19ecb848, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@60afa316, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38a1a11c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44881e5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@126c774a, org.springframework.security.web.session.SessionManagementFilter@25318cdd, org.springframework.security.web.access.ExceptionTranslationFilter@7681c4c4, org.springframework.security.web.access.intercept.AuthorizationFilter@74d9b462]
+2023-01-26 15:40:52.002  WARN 724 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-26 15:40:52.321  WARN 724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-26 15:40:52.342  WARN 724 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2023-01-26 15:40:52.344  INFO 724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-26 15:40:52.346  INFO 724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-26 15:40:52.355  INFO 724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-26 15:40:52.357  INFO 724 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-26 15:40:52.369  INFO 724 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-java.lang.NullPointerException: Cannot invoke "kr.co.sboard.vo.ArticleVO.getUid()" because "article" is null
-	at kr.co.sboard.service.ArticleService.selectArticle(ArticleService.java:64) ~[classes/:na]
-	at kr.co.sboard.service.ArticleService$$FastClassBySpringCGLIB$$e2a2ecf8.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.24.jar:5.3.24]
-	at kr.co.sboard.service.ArticleService$$EnhancerBySpringCGLIB$$e96454e0.selectArticle(<generated>) ~[classes/:na]
-	at kr.co.sboard.controller.ArticleController.view(ArticleController.java:76) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.24.jar:5.3.24]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.6.jar:5.7.6]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-01-26 15:40:52.389 ERROR 724 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
-2023-01-25 02:00:49.572  INFO 3012 --- [http-nio-8080-exec-4] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:00:49.572  INFO 3012 --- [http-nio-8080-exec-4] k.c.sboard.controller.ArticleController  : title : 글수정 테스트
-2023-01-25 02:00:49.572  INFO 3012 --- [http-nio-8080-exec-4] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:00:49.572  INFO 3012 --- [http-nio-8080-exec-4] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:01:00.932  INFO 3012 --- [http-nio-8080-exec-3] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:01:00.934  INFO 3012 --- [http-nio-8080-exec-3] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:01:00.935  INFO 3012 --- [http-nio-8080-exec-3] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:01:00.935  INFO 3012 --- [http-nio-8080-exec-3] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:04:24.374  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:04:24.374  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:04:24.374  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:04:24.374  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:04:26.771  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:04:26.771  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:04:26.771  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:04:26.771  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:04:31.156  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:04:31.156  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:04:31.156  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:04:31.156  INFO 3012 --- [http-nio-8080-exec-5] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:04:32.492  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:04:32.492  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:04:32.492  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:04:32.492  INFO 3012 --- [http-nio-8080-exec-9] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:04:59.406  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:04:59.407  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:04:59.407  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:04:59.407  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:00.476  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:00.476  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:00.476  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:00.476  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:01.329  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:01.329  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:01.329  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:01.329  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:01.842  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:01.843  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:01.843  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:01.843  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:02.336  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:02.337  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:02.337  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:02.337  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:02.776  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:02.776  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:02.776  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:02.776  INFO 3012 --- [http-nio-8080-exec-10] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:03.742  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : uid : null
-2023-01-25 02:05:03.742  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : title : 글수정 테스트 (수정됨)
-2023-01-25 02:05:03.742  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : content : 글수정 테스트
-2023-01-25 02:05:03.742  INFO 3012 --- [http-nio-8080-exec-2] k.c.sboard.controller.ArticleController  : no : 203
-2023-01-25 02:05:25.287  INFO 3012 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2023-01-25 02:05:25.303  INFO 3012 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-01-25 02:05:25.304  INFO 3012 --- [Thread-5] o.a.c.c.C.[.[localhost].[/Sboard]        : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-01-25 02:05:25.317  WARN 3012 --- [Thread-5] o.a.c.c.C.[.[localhost].[/Sboard]        : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [16242F5C8FBA0C885B87C1618DE0EAA2]
+***************************
+APPLICATION FAILED TO START
+***************************
 
-java.io.NotSerializableException: kr.co.sboard.entity.UserEntity
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:350) ~[na:na]
-	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1761) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1067) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5459) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1409) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:983) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1409) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:983) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:495) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:982) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:496) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:52) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1067) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:309) ~[spring-boot-devtools-2.7.7.jar:2.7.7]
-	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:251) ~[spring-boot-devtools-2.7.7.jar:2.7.7]
-	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:629) ~[spring-boot-devtools-2.7.7.jar:2.7.7]
+Description:
 
-2023-01-25 02:05:25.324  INFO 3012 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 02:05:25.326  INFO 3012 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-25 02:05:25.329  INFO 3012 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-25 02:05:25.416  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : Starting SboardApplication using Java 17.0.5 on DESKTOP-VM4SFC7 with PID 3012 (C:\Users\hasj7\OneDrive\바탕 화면\Workspace\SpringBoot\Sboard\target\classes started by hasj7 in C:\Users\hasj7\OneDrive\바탕 화면\Workspace\SpringBoot\Sboard)
-2023-01-25 02:05:25.417  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : No active profile set, falling back to 1 default profile: "default"
-2023-01-25 02:05:25.682  INFO 3012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-25 02:05:25.696  INFO 3012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
-2023-01-25 02:05:25.816  INFO 3012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-01-25 02:05:25.817  INFO 3012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-25 02:05:25.817  INFO 3012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
-2023-01-25 02:05:25.837  INFO 3012 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring embedded WebApplicationContext
-2023-01-25 02:05:25.837  INFO 3012 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 418 ms
-2023-01-25 02:05:25.855  WARN 3012 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard]        : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [16242F5C8FBA0C885B87C1618DE0EAA2]
-2023-01-25 02:05:25.883  INFO 3012 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-25 02:05:25.889  INFO 3012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2023-01-25 02:05:25.898  INFO 3012 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2023-01-25 02:05:25.899  INFO 3012 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2023-01-25 02:05:25.941  INFO 3012 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-25 02:05:25.942  INFO 3012 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 02:05:26.090  INFO 3012 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f91cfb0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c162915, org.springframework.security.web.context.SecurityContextPersistenceFilter@744244f7, org.springframework.security.web.header.HeaderWriterFilter@37aac2c1, org.springframework.security.web.authentication.logout.LogoutFilter@250a85e5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42943f1d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8dfb751, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6902c041, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29502c2f, org.springframework.security.web.session.SessionManagementFilter@e54886, org.springframework.security.web.access.ExceptionTranslationFilter@58849ca2, org.springframework.security.web.access.intercept.AuthorizationFilter@11a9121]
-2023-01-25 02:05:26.103  WARN 3012 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-25 02:05:26.219  INFO 3012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-01-25 02:05:26.229  INFO 3012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Sboard'
-2023-01-25 02:05:26.233  INFO 3012 --- [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 0.848 seconds (JVM running for 3778.013)
-2023-01-25 02:05:26.235  INFO 3012 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2023-01-25 02:06:10.701  INFO 3012 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-25 02:06:10.701  INFO 3012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-25 02:06:10.702  INFO 3012 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-25 02:37:19.538  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2023-01-25 02:37:19.575  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-01-25 02:37:19.576  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] o.a.c.c.C.[.[localhost].[/Sboard]        : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-01-25 02:37:19.606  WARN 3012 --- [RMI TCP Connection(99)-127.0.0.1] o.a.c.c.C.[.[localhost].[/Sboard]        : Cannot serialize session attribute [SPRING_SECURITY_CONTEXT] for session [49EF03A6CFB6C7EB20D7348DB4CD8C34]
+Web server failed to start. Port 8080 was already in use.
 
-java.io.NotSerializableException: kr.co.sboard.entity.UserEntity
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1572) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1529) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1438) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1181) ~[na:na]
-	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:350) ~[na:na]
-	at org.apache.catalina.session.StandardSession.doWriteObject(StandardSession.java:1761) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardSession.writeObjectData(StandardSession.java:1067) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:317) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:268) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5459) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1409) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:983) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1409) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1398) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:983) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:495) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:982) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:496) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stopTomcat(TomcatWebServer.java:273) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:331) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:52) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:234) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:373) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:206) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:129) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1067) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.7.jar:2.7.7]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) ~[spring-boot-2.7.7.jar:2.7.7]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:72) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:262) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:117) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:54) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:237) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) ~[na:na]
-	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814) ~[na:na]
-	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802) ~[na:na]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472) ~[na:na]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[na:na]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[na:na]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[na:na]
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) ~[na:na]
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) ~[na:na]
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712) ~[na:na]
-	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705) ~[na:na]
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Action:
 
-2023-01-25 02:37:19.622  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-25 02:37:19.623  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2023-01-25 02:37:19.631  INFO 3012 --- [RMI TCP Connection(99)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-01-26 15:41:16.590  INFO 4940 --- [restartedMain] kr.co.sboard.SboardApplication           : Starting SboardApplication using Java 17.0.5 on DESKTOP-QOTDKI5 with PID 4940 (C:\Users\java2\Desktop\Workspace\SpringBoot\Sboard\target\classes started by java2 in C:\Users\java2\Desktop\Workspace\SpringBoot\Sboard)
+2023-01-26 15:41:16.592  INFO 4940 --- [restartedMain] kr.co.sboard.SboardApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-26 15:41:16.645  INFO 4940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-26 15:41:16.646  INFO 4940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-26 15:41:17.197  INFO 4940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-26 15:41:17.253  INFO 4940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2023-01-26 15:41:17.816  INFO 4940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-01-26 15:41:17.828  INFO 4940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-26 15:41:17.828  INFO 4940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-26 15:41:17.916  INFO 4940 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring embedded WebApplicationContext
+2023-01-26 15:41:17.917  INFO 4940 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1271 ms
+2023-01-26 15:41:18.094  INFO 4940 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-26 15:41:18.140  INFO 4940 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-26 15:41:18.298  INFO 4940 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-26 15:41:18.393  INFO 4940 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-26 15:41:18.671  INFO 4940 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-26 15:41:18.686  INFO 4940 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-01-26 15:41:19.241  INFO 4940 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-26 15:41:19.248  INFO 4940 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-26 15:41:20.075  INFO 4940 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30710aca, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f55157, org.springframework.security.web.context.SecurityContextPersistenceFilter@157b7938, org.springframework.security.web.header.HeaderWriterFilter@6bd24d27, org.springframework.security.web.authentication.logout.LogoutFilter@16992727, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@497f397a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34a61b72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2384116e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c534cf2, org.springframework.security.web.session.SessionManagementFilter@57c4e7f4, org.springframework.security.web.access.ExceptionTranslationFilter@3efd0c48, org.springframework.security.web.access.intercept.AuthorizationFilter@729f7c2d]
+2023-01-26 15:41:20.109  WARN 4940 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-26 15:41:20.443  WARN 4940 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-26 15:41:20.476  INFO 4940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/Sboard'
+2023-01-26 15:41:20.486  INFO 4940 --- [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 4.241 seconds (JVM running for 4.945)
+2023-01-26 15:41:30.384  INFO 4940 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/Sboard]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-26 15:41:30.384  INFO 4940 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-26 15:41:30.385  INFO 4940 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-26 18:13:07.396  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-26 18:13:07.432  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-26 18:13:07.435  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] o.a.c.c.C.[.[localhost].[/Sboard]        : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-26 18:13:07.469  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-26 18:13:07.486  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-26 18:13:07.492  INFO 4940 --- [RMI TCP Connection(155)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

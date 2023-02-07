@@ -27,6 +27,13 @@
 			`oriName`=#{oriName};
 	</insert>
 	
+	<insert id="insertComment">
+		insert into `board_article` set
+			`parent`=#{parent},
+			`uid`=#{uid},
+			`content`=#{content};
+	</insert>
+	
 	<select id="selectFile" resultType="kr.co.sboard.vo.FileVO">
  		select * from `board_file` where `fno`=#{fno};
  	</select>
@@ -91,6 +98,10 @@
  			where `no`=#{no}
  	</update>
  	
-	
+	<delete id="deleteArticle">
+		DELETE a, b FROM `board_article` AS a
+		JOIN `board_file` AS b ON a.no = b.parent
+		WHERE a.no = #{no}
+	</delete>
 	
 </mapper>

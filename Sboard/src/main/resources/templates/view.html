@@ -5,6 +5,47 @@
     <meta charset="UTF-8">
     <title>글보기</title>    
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script>
+    	window.onload = ()=>{
+    		// 게시글 삭제
+    		document.querySelector('.btnRemove').onclick = ()=>{
+    			if(confirm('정말 삭제 하시겠습니까?')){
+    				return true;
+    			}else{
+	    			return false;
+    			}
+    		};
+    		
+    		// 댓글 쓰기
+    		document.querySelector('form').onsubmit = (e)=>{
+    			
+    			let parent = document.querySelector('input[name=parent]').value;
+    			let uid = document.querySelector('input[name=uid]').value;
+    			let content = document.querySelector('form > textarea[name=content]').value;
+    			
+    			const xhr = new XMLHttpRequest();
+				xhr.open("GET", "/Sboard/writeComment?parent="+parent+"&uid="+uid+"&content"+content);
+				xhr.responseType = "json";
+				xhr.send();
+				
+				xhr.onreadystatechange = ()=>{
+					if(xhr.readyState == XMLHttpRequest.DONE){
+						
+						if(xhr.status == 200){
+							const data = xhr.response;
+							console.log(log);
+							
+							if(data.result == 1){
+								
+							}
+						}
+					}
+				};
+	    			
+    			return false;
+    		};
+    	};
+    </script>
 </head>
 <body>
     <div id="wrapper">
@@ -38,7 +79,7 @@
             </table>
 
             <div>
-                <a th:if="${#authentication.principal.user.uid == article.uid}" th:href="@{#}" class="btn btnRemove">삭제</a>
+                <a th:if="${#authentication.principal.user.uid == article.uid}" th:href="@{/delete(no=${article.no})}" class="btn btnRemove">삭제</a>
                 <a th:if="${#authentication.principal.user.uid == article.uid}" th:href="@{/modify(no=${article.no})}" class="btn btnModify">수정</a>
                 <a th:href="@{/list}" class="btn btnList">목록</a>
             </div>
@@ -62,6 +103,8 @@
             <section class="commentForm">
                 <h3>댓글쓰기</h3>
                 <form action="#">
+                	<input type="hidden" name="uid" th:value="${#authentication.principal.user.uid}" />
+                	<input type="hidden" name="parent" th:value="${article.no}"/>
                     <textarea name="content" placeholder="댓글내용 입력"></textarea>
                     <div>
                         <a href="#" class="btn btnCancel">취소</a>
