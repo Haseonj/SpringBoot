@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+    <insert id="insertBook">
+        INSERT INTO `book`(`bookName`, `publisher`, `price`) VALUES (#{bookName}, #{publisher}, #{price});
+    </insert>
+    <select id="selectBook" resultType="kr.co.bookstore1.vo.BookVO">
+        SELECT * FROM `book` WHERE `bookId`=#{bookId};
+    </select>
+    <select id="selectBooks" resultType="kr.co.bookstore1.vo.BookVO">
+        SELECT * FROM `book`;
+    </select>
+    <update id="updateBook">
+        UPDATE `book` SET
+            `bookName`=#{bookName},
+            `publisher`=#{publisher},
+            `price`=#{price}
+        WHERE
+            `bookId`=#{bookId};
+    </update>
+    <delete id="deleteBook">
+        DELETE FROM `book` WHERE `bookId`=#{bookId};
+    </delete>
+</mapper>
